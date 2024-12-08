@@ -9,6 +9,7 @@ app.use(express.static('public'));
 
 mongoose.connect(process.env.MONGODB_URI);
 
+
 // CRUD Routes
 app.get('/api/todos', async (req, res) => {
   const todos = await Todo.find().sort({ createdAt: -1 });
